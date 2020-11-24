@@ -5,7 +5,6 @@ namespace ConsoleApp1
     class Program
     {
         static void Main()
-            //Упражнение 1
         {
             var name = Console.ReadLine();
             Console.WriteLine("Привет" + ", " + name + "!");
