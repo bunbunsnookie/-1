@@ -1,0 +1,22 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main()
+        {
+            var a = Console.ReadLine();
+            var b = Console.ReadLine();
+            if (int.TryParse(a, out var intA) == false) Console.WriteLine("Некорректно введённые данные");
+            if (int.TryParse(b, out var intB) == false) Console.WriteLine("Некорректно введённые данные");
+            if (intB == 0)
+            {
+                Console.WriteLine("На ноль делить нельзя!");
+                Environment.Exit(0);
+            }
+            var ans = intA / intB;
+            Console.WriteLine(ans);
+        }
+    }
+}
