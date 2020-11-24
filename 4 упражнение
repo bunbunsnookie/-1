@@ -1,0 +1,55 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Простое квадратное уравнение вида: ax^2 + bx + c = 0, где c не равно 0. Введите числа a, b, c, учитывая знак перед числом:"); 
+
+            var a = Console.ReadLine();
+            var b = Console.ReadLine();
+            var c = Console.ReadLine();
+            if (double.TryParse(a, out var doubleA) == false)
+            {
+                Console.WriteLine("Некорректно введённые данные");
+                    Environment.Exit(0);
+            }
+
+            if (double.TryParse(b, out var doubleB) == false)
+            {
+                Console.WriteLine("Некорректно введённые данные");
+                Environment.Exit(0);
+            }
+
+            if (double.TryParse(c, out var doubleС) == false) 
+            {
+                Console.WriteLine("Некорректно введённые данные");
+                Environment.Exit(0);
+            }
+
+            var kvadrat = doubleB * doubleB;
+            var Discriminant = (kvadrat) - (4 * doubleA * doubleС);
+            if (Discriminant > 0)
+            {
+                var x1 = ((doubleB + Math.Sqrt(Discriminant)) / (2 * doubleA));
+                var x2 = ((doubleB - Math.Sqrt(Discriminant)) / (2 * doubleA));
+                Console.WriteLine("Первый корень:" + " " + x1);
+                Console.WriteLine("Второй корень:" + " " + x2);
+                Environment.Exit(0);
+            }
+            if (Discriminant < 0)
+            {
+                Console.WriteLine("Корней нет");
+                Environment.Exit(0);
+            }
+            if (Discriminant == 0)
+            {
+                var x = ((-1 * doubleB) / (2 * doubleA));
+                Console.WriteLine("Единственный корень:" + " " + x);
+                Environment.Exit(0);
+            }
+        }
+    }
+}
